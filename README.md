@@ -1,9 +1,8 @@
-# Real-time-webcam-face-detection-1
-Face Detection in Python Using a Webcam
+# Face Detection in Python Using  Webcam
 
 “Computer vision and machine learning have really started to take off, but for most people, the whole idea of what a computer is seeing when it’s looking at an image is relatively obscure.” – Mike Kreiger
 
- visit itsaihub.com for more tutorials.
+ visit [AI PROJECTS](https://aihubprojects.com) for more tutorials.
 Following are the requirements for it:-
 
   1. Python 2.7/3
@@ -19,17 +18,22 @@ OpenCV comes with a trainer as well as detector. Here we will deal with detectio
 
 first we need to import requisites and required XML classifiers. 
 
+```python
 import cv2
 import sys
 
 faceCascade = cv2.CascadeClassifier("haarcascade_frontalface_default.xml")
+```
 
 This line sets the video source to the default webcam, which OpenCV can easily capture.
 
+```python
 video_capture = cv2.VideoCapture(0)
+```
 
 NOTE: You can also provide a filename here, and Python will read in the video file. However, you need to have ffmpeg installed for that since OpenCV itself cannot decode compressed video. Ffmpeg acts as the front end for OpenCV, and, ideally, it should be compiled directly into OpenCV. This is not easy to do, especially on Windows.
 
+```python
 while True:
     
     ret, frame = video_capture.read()
@@ -57,6 +61,7 @@ while True:
 
 video_capture.release()
 cv2.destroyAllWindows()
+```
 
 Here, we capture the video. The read() function reads one frame from the video source, which in this example is the webcam. This returns:
 
@@ -69,7 +74,10 @@ We wait for the ‘q’ key to be pressed. If it is, we exit the script.
 Testing the application
 Now it’s time to test our application by executing the following command in the terminal:
 
+```python
 python <python script name>.py
+```
+
 Once the script gets executed successfully, you will be able to see yourself in the frame and a rectangle is drawn around your face as shown in below image.
   
 That’s all. Hope you got idea on real time face detection in webcam using Python 3.
